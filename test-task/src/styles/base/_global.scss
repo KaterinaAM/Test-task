@@ -1,0 +1,45 @@
+@use "./variables" as *;
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-text;
+  font-weight: $fw-regular;
+  line-height: 1.4;
+
+  color: $color-text;
+  background: $color-white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(24, 184, 239, .25);
+}
+
+a {
+  transition: color .2s ease;
+}
+
+
+button {
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .2s ease,
+    box-shadow .25s ease;
+}
+
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+
+:focus-visible {
+  outline: 2px solid rgba(24, 184, 239, .35);
+  outline-offset: 3px;
+}

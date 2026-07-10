@@ -1,0 +1,392 @@
+@use "../base/variables" as *;
+
+.well-card {
+  display: flex;
+  flex-direction: column;
+
+  background: $color-white;
+
+  border-right: $border;
+}
+
+.well-card:last-child {
+  border-right: none;
+}
+
+.well-card__header {
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $color-blue-dark;
+}
+
+.well-card__title {
+  color: $color-title;
+
+  font-size: $font-size-title;
+  font-weight: $fw-bold;
+  line-height: 22px;
+
+  text-align: center;
+}
+
+
+.well-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 18px 20px;
+  gap: 26px;
+}
+
+
+.well-card__advantages{
+    min-height:120px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.well-card__advantage {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.well-card__advantage:last-child {
+  margin-bottom: 0;
+}
+
+.well-card__check {
+  flex-shrink: 0;
+
+  color: $color-green;
+
+  font-size: 17px;
+  font-weight: $fw-extra;
+
+  margin-top: 2px;
+}
+
+.well-card__advantage span:last-child {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+
+.well-card__price {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-height: 170px;
+
+  text-align: center;
+}
+
+
+.well-card__price-title {
+  margin-bottom: 8px;
+
+  font-size: 15px;
+  font-weight: $fw-bold;
+
+  line-height: 21px;
+}
+
+.well-card__price-value {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.well-card__price-value span {
+  color: $color-green;
+
+  font-size: 28px;
+  font-weight: 800;
+
+  margin-right: 5px;
+}
+
+
+.well-card__divider {
+    width: 100%;
+    height: 2px;
+
+    background: #18B8EF;
+
+    margin: 0 0 24px;
+
+    flex-shrink: 0;
+}
+
+
+.well-card__depths {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  
+    column-gap: 18px;
+    row-gap: 10px;
+    }
+  
+  .well-card__depths a {
+    position: relative;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    
+    min-height: 20px;
+  
+    padding-left: 18px;
+  
+    color: black;
+  
+    font-size: 15px;
+    font-weight: $fw-regular;
+  
+    line-height: 20px;
+    transition:
+    color .25s,
+    transform .25s;
+  }
+  
+ 
+  
+  .well-card__depths a::before {
+    content: "";
+  
+    position: absolute;
+  
+    left: 0;
+    top: 50%;
+  
+    width: 0;
+    height: 0;
+  
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid $color-blue;
+  
+    transform: translateY(-50%);
+  
+    transition: transform .2s ease;
+  }
+  
+  .well-card__depths a:hover {
+    color: $color-blue-hover;
+    color:#00BCEB;
+    text-decoration: none;
+    transform:translateX(4px);
+  }
+  
+  .well-card__depths a:hover::before {
+    transform: translateY(-50%) translateX(2px);
+    transform:
+        translateY(-50%)
+        translateX(3px);
+  }
+  
+
+  .well-card__button {
+    margin-top: auto;
+  
+    align-self: center;
+  
+    width: 250px;
+    height: 46px;
+  
+    border-radius: $radius;
+  
+    background: #00BCEB;
+  
+    color: $color-white;
+  
+    font-size: 17px;
+    font-weight: $fw-bold;
+  
+    line-height: 20px;
+  
+    box-shadow: $shadow-button;
+  
+    transition:
+      background-color .25s ease,
+      transform .2s ease,
+      box-shadow .25s ease;
+  }
+  
+  .well-card__button:hover {
+    background: $color-blue-hover;
+  
+    transform: translateY(-2px);
+  
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+  }
+  
+  .well-card__button:active {
+    transform: translateY(0);
+  }
+  
+ 
+  .well-card {
+    transition:
+      transform .25s ease,
+      box-shadow .25s ease;
+  }
+  
+  .well-card:hover {
+    z-index: 2;
+  
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .12);
+  }
+
+
+@media (max-width: $tablet) {
+
+    .well-types {
+      padding: 36px 0;
+    }
+  
+    .well-types__grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .well-card {
+      border-right: none;
+      border-bottom: $border;
+    }
+  
+    .well-card:last-child {
+      border-bottom: none;
+    }
+  
+    .well-card__header {
+      height: 56px;
+    }
+  
+    .well-card__content {
+      padding: 24px;
+    }
+  
+    .well-card__advantages {
+      min-height: auto;
+    }
+  
+    .well-card__price {
+      min-height: auto;
+      margin-bottom: 20px;
+    }
+  
+    .well-card__button {
+      width: 100%;
+      max-width: 300px;
+    }
+  
+  }
+  
+  @media (max-width: $mobile) {
+  
+    .well-types {
+      padding: 28px 0;
+    }
+  
+    .well-card__content {
+      padding: 20px;
+    }
+  
+    .well-card__title {
+      font-size: 15px;
+    }
+  
+    .well-card__advantage {
+      margin-bottom: 12px;
+    }
+  
+    .well-card__advantage span:last-child {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    .well-card__price-title {
+      font-size: 14px;
+    }
+  
+    .well-card__price-value {
+      font-size: 15px;
+    }
+  
+    .well-card__price-value span {
+      font-size: 24px;
+    }
+  
+    .well-card__depths {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+  }
+  
+  @media (max-width: $mobile-small) {
+  
+    .well-types {
+      padding: 20px 0;
+    }
+  
+    .container {
+      padding: 0 12px;
+    }
+  
+    .well-card__header {
+      height: 52px;
+    }
+  
+    .well-card__content {
+      padding: 18px 16px;
+    }
+  
+    .well-card__title {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  
+    .well-card__advantage {
+      gap: 8px;
+    }
+  
+    .well-card__check {
+      font-size: 15px;
+    }
+  
+    .well-card__price-title {
+      margin-bottom: 6px;
+    }
+  
+    .well-card__price-value span {
+      font-size: 22px;
+    }
+  
+    .well-card__divider {
+      margin: 16px 0 18px;
+    }
+  
+    .well-card__button {
+      width: 100%;
+      max-width: none;
+      height: 48px;
+      font-size: 16px;
+    }
+  
+  }
+  
+ 
+  .well-card__button:focus-visible,
+  .well-card__depths a:focus-visible {
+    outline: 2px solid rgba(24, 184, 239, .35);
+    outline-offset: 3px;
+  }
